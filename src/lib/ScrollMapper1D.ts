@@ -1,4 +1,6 @@
 export class ScrollMapper1D {
+	pos = 0;
+
 	update(pos: number) {
 		this.pos = pos;
 	}
