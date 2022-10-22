@@ -41,8 +41,6 @@ export class MainSceneDrawer implements SceneDrawer {
 				1
 			);
 		}
-		
-		console.log(this.scrollMapper?.pos);
 
 		this.calculateGeometry();
 	}
@@ -191,6 +189,7 @@ export class MainSceneDrawer implements SceneDrawer {
 			this.scrollMapper?.onScroll(window.scrollY);
 		});
 
+		this.scrollMapper.pos = window.scrollY;
 		this.camera = camera;
 
 		return [this.mesh, light];

@@ -1,0 +1,12 @@
+{
+	"exogram": {
+		"name": "Exogram",
+		"description": "<strong>Exogram</strong> is a web application I made for NASA's Planet Patrol project to aid in the search for exoplanets and other objects of interest from the TESS mission. Written in React, the application allows users to search for, comment on, share, and generate light curves for thousands of TESS targets. Written in React and hosted by Firebase and Vercel.",
+		"images": ["/imgs/exogram-charts.jpg"]
+	},
+	"geoguessr": {
+		"name": "Geoguessr",
+		"description": "Instead of paying $2 a month for the real game, I decided to remake <strong>Geoguessr</strong> from scratch! Features a countries and a Battle Royale gamemode. Written in React and Node.js.",
+		"images": ["/imgs/geoguessr.jpg"]
+	}
+}
