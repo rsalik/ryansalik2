@@ -85,7 +85,7 @@
 		}
 
 		img {
-			width: 30%;
+			width: 25vw;
 			margin-left: 1em;
 
 			@extend %border-radius;

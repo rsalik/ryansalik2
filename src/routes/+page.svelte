@@ -58,7 +58,7 @@
 		<div class="border wrapper">
 			<div class="mono">
 				<div class="mono">
-					<div class="bold text">Front & Back Ends</div>
+					<div class="bold text">Front & Back End</div>
 					<br />
 					<div class="bold text">Over 15 programming languages</div>
 					<ul>
