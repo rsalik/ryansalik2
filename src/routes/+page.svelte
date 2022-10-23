@@ -30,8 +30,8 @@
 			featurePanel0 = scrollMapper.get(-1000, 1450, 4000, 1900, 200, 1541);
 			featurePanel1 = scrollMapper.get(-1000, 1900, 4000, 2350, 200, 1991);
 
-			projectsPanel = scrollMapper.get(2000, 2350, 0, 2500);
-			contactPanel = scrollMapper.get(2000, 2350, 0, 2500);
+			projectsPanel = scrollMapper.get(-2000, 2350, 0, 2500);
+			contactPanel = scrollMapper.get(-2000, 2350, 0, 2500);
 		}, 10);
 	});
 
@@ -44,7 +44,7 @@
 	let featurePanel0 = -2000;
 	let featurePanel1 = 4000;
 
-	let [projectsPanel, contactPanel] = [2000, 2000];
+	let [projectsPanel, contactPanel] = [-2000, -2000];
 </script>
 
 <canvas bind:this={canvas} />
