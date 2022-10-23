@@ -6,19 +6,19 @@
 		"webLink": "https://exogram.vercel.app/",
 		"repoLink": "https://github.com/rsalik/exogram"
 	},
-	"geoguessr": {
-		"name": "Geoguessr",
-		"description": "Instead of paying $2 a month for the real game, I decided to remake Geoguessr from scratch! Features a countries and a Battle Royale gamemode. Written in React and Node.js.",
-		"image": "/imgs/geoguessr.jpg",
-		"webLink": "https://geoguessr.herokuapp.com/",
-		"repoLink": "https://github.com/rsalik/geoguessr"
-	},
 	"concurrently": {
 		"name": "The Concurrently",
 		"image": "/imgs/concurrently.jpg",
 		"description": "The Concurrently is a blog created with SvelteKit and hosted on Vercel.",
 		"webLink": "https://concurrently.ryansalik.com",
 		"repoLink": "https://www.github.com/rsalik/concurrently-blog"
+	},
+	"geoguessr": {
+		"name": "Geoguessr",
+		"description": "Instead of paying $2 a month for the real game, I decided to remake Geoguessr from scratch! Features a countries and a Battle Royale gamemode. Written in React and Node.js.",
+		"image": "/imgs/geoguessr.jpg",
+		"webLink": "https://geoguessr.herokuapp.com/",
+		"repoLink": "https://github.com/rsalik/geoguessr"
 	},
 	"bombparty": {
 		"name": "BombParty",
