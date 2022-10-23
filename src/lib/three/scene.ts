@@ -41,6 +41,7 @@ export class Scene<T extends SceneDrawer> {
 export interface SceneDrawer {
 	animate(scene: Scene<this>): void;
 	init(scene: Scene<this>): THREE.Object3D[];
+	resize(scene: Scene<this>): void;
 }
 
 export function initScene(el: HTMLCanvasElement, drawer: SceneDrawer) {
@@ -49,9 +50,13 @@ export function initScene(el: HTMLCanvasElement, drawer: SceneDrawer) {
 	return scene;
 }
 
-function resize<T extends SceneDrawer>({ renderer, camera }: Scene<T>) {
+function resize<T extends SceneDrawer>(scene: Scene<T>) {
+	const { camera, renderer } = scene;
+
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	renderer.setPixelRatio(window.devicePixelRatio);
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
+
+	scene.drawer.resize(scene);
 }

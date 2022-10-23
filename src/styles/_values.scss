@@ -1,0 +1,12 @@
+$color: white;
+$bkg: black;
+
+$mobile: 768px;
+
+%border-radius {
+	border-radius: 20px;
+
+	@media screen and (max-width: $mobile) {
+		border-radius: 10px;
+	}
+}

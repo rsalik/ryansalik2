@@ -29,6 +29,9 @@
 
 			featurePanel0 = scrollMapper.get(-1000, 1450, 4000, 1900, 200, 1541);
 			featurePanel1 = scrollMapper.get(-1000, 1900, 4000, 2350, 200, 1991);
+
+			projectsPanel = scrollMapper.get(2000, 2350, 0, 2500);
+			contactPanel = scrollMapper.get(2000, 2350, 0, 2500);
 		}, 10);
 	});
 
@@ -40,6 +43,8 @@
 
 	let featurePanel0 = -2000;
 	let featurePanel1 = 4000;
+
+	let [projectsPanel, contactPanel] = [2000, 2000];
 </script>
 
 <canvas bind:this={canvas} />
@@ -58,25 +63,25 @@
 					<div class="bold text">Over 15 programming languages</div>
 					<ul>
 						<li>JavaScript / TypeScript</li>
-						<li>HTML</li>
-						<li>CSS / SASS</li>
+						<li class="no-mobile">HTML</li>
+						<li class="no-mobile">CSS / SASS</li>
 						<li>C#</li>
-						<li>Java</li>
-						<li>Python</li>
-						<li>C++</li>
+						<li class="no-mobile">Java</li>
+						<li class="no-mobile">Python</li>
+						<li class="no-mobile">C++</li>
 						<li>etc.</li>
 					</ul>
 					<div class="bold text">Web Development</div>
 					<ul>
 						<li>Node.js</li>
 						<li>React</li>
-						<li>Svelte</li>
+						<li class="no-mobile">Svelte</li>
 						<li>etc.</li>
 					</ul>
 					<div class="bold text">Countless Software</div>
 					<ul>
 						<li>Unity</li>
-						<li>XCode</li>
+						<li class="no-mobile">XCode</li>
 						<li>Android Studio</li>
 						<li>etc.</li>
 					</ul>
@@ -117,21 +122,40 @@
 		</div>
 	</div>
 
-	<div class="panel left" style:left="{featurePanel0}px">
+	<div class="panel left" style:left="{featurePanel0}px" style:max-width="82%">
 		<div class="title">Featured Project</div>
 		<div class="mono large">{exogram.name}</div>
-		<img src={exogram.images[0]} alt="" />
+		<img src={exogram.image} alt="" />
 		<div class="desc">
 			{@html exogram.description}
 		</div>
 	</div>
 
-	<div class="panel right" style:right="{featurePanel1}px" style:text-align="right">
+	<div
+		class="panel right mobile-bump"
+		style:right="{featurePanel1}px"
+		style:text-align="right"
+		style:max-width="82%"
+	>
 		<div class="title">Featured Project</div>
 		<div class="mono large">{geoguessr.name}</div>
-		<img src={geoguessr.images[0]} alt="" />
+		<img src={geoguessr.image} alt="" />
 		<div class="desc">
 			{@html geoguessr.description}
+		</div>
+	</div>
+
+	<div class="panel left half" style:left="{projectsPanel}px">
+		<div class="wrapper border">
+			<div class="title">Projects</div>
+			<a class="mono medium" href="/projects">View All →</a>
+		</div>
+	</div>
+	<div class="panel right half" style:right="{contactPanel}px" style:left="auto">
+		<div class="wrapper border">
+			<div class="title">Contact</div>
+			<a class="mono medium" href="mailto:rssalik14@gmail.com">rssalik14@gmail.com</a>
+			<a class="mono medium" href="https://github.com/rsalik">GitHub/rsalik</a>
 		</div>
 	</div>
 </div>
@@ -148,38 +172,44 @@
 	}
 
 	.scroller {
-		height: 3000px;
-	}
-
-	.title {
-		font-size: 2.3em;
-		font-weight: 900;
+		height: 3730px;
 	}
 
 	.large {
 		font-size: 1.9em;
 	}
 
+	.medium {
+		font-size: 1.2em;
+	}
+
 	.bold {
 		font-weight: 900;
+	}
+
+	.no-mobile {
+		@media screen and (max-width: $mobile) {
+			display: none;
+		}
 	}
 
 	img {
 		margin: 1rem 0;
 
-		border-radius: 10px;
+		@extend %border-radius;
 	}
 
 	.border {
-		border: 2px solid white;
-		border-radius: 20px;
+		border: 2px solid $color;
+
+		@extend %border-radius;
 	}
 
 	.background {
-		color: black;
-		border-radius: 20px;
-		background: white;
+		color: $bkg;
+		background: $color;
 
+		@extend %border-radius;
 		mix-blend-mode: multiply;
 	}
 
@@ -191,7 +221,7 @@
 		box-sizing: border-box;
 		width: 100%;
 		height: 100%;
-		padding: inherit;
+		padding: 1rem;
 
 		&.centered {
 			align-items: center;
@@ -224,7 +254,7 @@
 		right: 1.8rem;
 		bottom: 1.2rem;
 
-		color: white;
+		color: $color;
 
 		mix-blend-mode: difference;
 	}
@@ -244,6 +274,46 @@
 		height: 100%;
 		padding: 1rem;
 
+		@media screen and (max-width: $mobile) {
+			width: 100%;
+			height: 50vh;
+			.wrapper {
+				justify-content: center;
+			}
+
+			&.mobile-bump {
+				margin-top: -2em;
+			}
+
+			&.left {
+				top: 0;
+
+				padding-right: 1rem !important;
+				padding-bottom: 0.5rem;
+			}
+
+			&.right {
+				top: 0;
+
+				padding-top: 0.5rem;
+				padding-left: 1rem !important;
+
+				transform: translateY(50vh);
+			}
+		}
+
+		&.half {
+			height: 50vh;
+			@media screen and (min-width: $mobile) {
+				top: auto;
+				bottom: 0;
+			}
+
+			@media screen and (max-width: $mobile) {
+				align-items: center;
+			}
+		}
+
 		&.left {
 			left: 0;
 
@@ -257,7 +327,9 @@
 		}
 
 		&.reverse {
-			flex-direction: column-reverse;
+			@media screen and (min-width: $mobile) {
+				flex-direction: column-reverse;
+			}
 		}
 	}
 

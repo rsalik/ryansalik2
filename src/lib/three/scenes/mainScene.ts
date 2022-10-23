@@ -176,6 +176,26 @@ export class MainSceneDrawer implements SceneDrawer {
 				scrollStart: 2100,
 				pos: new THREE.Vector3(-7, -10, 10),
 				rot: new THREE.Euler(1, -1.5, 0)
+			},
+			{
+				scrollStart: 2200,
+				pos: new THREE.Vector3(-3, -12, 10),
+				rot: new THREE.Euler(1, -1.5, 1)
+			},
+			{
+				scrollStart: 2500,
+				pos: new THREE.Vector3(0, -2, 20),
+				rot: new THREE.Euler(0, 0, 0)
+			},
+			{
+				scrollStart: 2700,
+				pos: new THREE.Vector3(0, 3, 35),
+				rot: new THREE.Euler(0, 0, 0)
+			},
+			{
+				scrollStart: 2800,
+				pos: new THREE.Vector3(0, 3, 0),
+				rot: new THREE.Euler(0, 0, 0)
 			}
 		]);
 
@@ -192,6 +212,16 @@ export class MainSceneDrawer implements SceneDrawer {
 		this.scrollMapper.pos = window.scrollY;
 		this.camera = camera;
 
+		setTimeout(this.resize.bind(this), 100);
+
 		return [this.mesh, light];
+	}
+
+	resize() {
+		if (window.innerWidth > 768) {
+			this.textMesh?.position.set(-3.65, 2.5, -10);
+		} else {
+			this.textMesh?.position.set(-3.65, 2.5, -25);
+		}
 	}
 }
