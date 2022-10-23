@@ -17,7 +17,7 @@
 		setInterval(() => {
 			scrollMapper.update(sceneDrawer.scrollPos);
 
-			scroll = window.innerWidth;//Math.floor(scrollMapper.pos);
+			scroll = Math.floor(scrollMapper.pos);
 
 			aboutBanner = scrollMapper.get(window.innerWidth + 100, 0, -2000, 300);
 
@@ -210,7 +210,6 @@
 		background: $color;
 
 		@extend %border-radius;
-		mix-blend-mode: multiply;
 	}
 
 	.wrapper {
