@@ -138,6 +138,7 @@ export class MainSceneDrawer implements SceneDrawer {
 		loader.load('/3fonts/AllianceBlack.json', (font) => {
 			this.textMesh = this.generateTextMesh('Ryan Salik', font, new THREE.Vector3(-3.5, 2.5, -10));
 			scene.add(this.textMesh);
+			this.resize()
 		});
 
 		// Camera Scroll Mappings
@@ -211,8 +212,6 @@ export class MainSceneDrawer implements SceneDrawer {
 
 		this.scrollMapper.pos = window.scrollY;
 		this.camera = camera;
-
-		setTimeout(this.resize.bind(this), 100);
 
 		return [this.mesh, light];
 	}

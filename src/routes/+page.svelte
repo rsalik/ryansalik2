@@ -17,7 +17,7 @@
 		setInterval(() => {
 			scrollMapper.update(sceneDrawer.scrollPos);
 
-			scroll = Math.floor(scrollMapper.pos);
+			scroll = window.innerWidth;//Math.floor(scrollMapper.pos);
 
 			aboutBanner = scrollMapper.get(window.innerWidth + 100, 0, -2000, 300);
 
