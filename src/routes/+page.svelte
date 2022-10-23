@@ -172,7 +172,7 @@
 	}
 
 	.scroller {
-		height: 3730px;
+		height: calc(100vh + 2800px);
 	}
 
 	.large {
@@ -242,7 +242,7 @@
 		height: 100%;
 		padding: 1rem;
 
-		mix-blend-mode: difference;
+		mix-blend-mode: exclusion;
 
 		> div {
 			position: absolute;
@@ -256,7 +256,7 @@
 
 		color: $color;
 
-		mix-blend-mode: difference;
+		mix-blend-mode: exclusion;
 	}
 
 	.banner {
